@@ -1,0 +1,535 @@
+\begin{tikzpicture}
+\pgfdeclareplotmark{cross} {
+\pgfpathmoveto{\pgfpoint{-0.3\pgfplotmarksize}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+0.3\pgfplotmarksize}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+0.3\pgfplotmarksize}{0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+1\pgfplotmarksize}{0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+1\pgfplotmarksize}{-0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+0.3\pgfplotmarksize}{-0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+0.3\pgfplotmarksize}{-1.\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{-0.3\pgfplotmarksize}{-1.\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{-0.3\pgfplotmarksize}{-0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{-1.\pgfplotmarksize}{-0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{-1.\pgfplotmarksize}{0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{-0.3\pgfplotmarksize}{0.3\pgfplotmarksize}}
+\pgfpathclose
+\pgfusepathqstroke
+}
+\pgfdeclareplotmark{cross*} {
+\pgfpathmoveto{\pgfpoint{-0.3\pgfplotmarksize}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+0.3\pgfplotmarksize}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+0.3\pgfplotmarksize}{0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+1\pgfplotmarksize}{0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+1\pgfplotmarksize}{-0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+0.3\pgfplotmarksize}{-0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{+0.3\pgfplotmarksize}{-1.\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{-0.3\pgfplotmarksize}{-1.\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{-0.3\pgfplotmarksize}{-0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{-1.\pgfplotmarksize}{-0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{-1.\pgfplotmarksize}{0.3\pgfplotmarksize}}
+\pgfpathlineto{\pgfpoint{-0.3\pgfplotmarksize}{0.3\pgfplotmarksize}}
+\pgfpathclose
+\pgfusepathqfillstroke
+}
+\pgfdeclareplotmark{newstar} {
+\pgfpathmoveto{\pgfqpoint{0pt}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{44}{0.5\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{18}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{-20}{0.5\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{-54}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{-90}{0.5\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{234}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{198}{0.5\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{162}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{134}{0.5\pgfplotmarksize}}
+\pgfpathclose
+\pgfusepathqstroke
+}
+\pgfdeclareplotmark{newstar*} {
+\pgfpathmoveto{\pgfqpoint{0pt}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{44}{0.5\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{18}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{-20}{0.5\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{-54}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{-90}{0.5\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{234}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{198}{0.5\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{162}{\pgfplotmarksize}}
+\pgfpathlineto{\pgfqpointpolar{134}{0.5\pgfplotmarksize}}
+\pgfpathclose
+\pgfusepathqfillstroke
+}
+\definecolor{c}{rgb}{0,0,0};
+\draw [c,line width=0.9] (3.2,2.33723) -- (3.2,13.7312) -- (18.4,13.7312) -- (18.4,2.33723) -- (3.2,2.33723);
+\draw [c,line width=0.9] (3.2,2.33723) -- (3.2,13.7312) -- (18.4,13.7312) -- (18.4,2.33723) -- (3.2,2.33723);
+\draw [c,line width=1.8] (3.2,2.33723) -- (18.4,2.33723);
+\draw [c,line width=1.8] (3.2,13.7312) -- (18.4,13.7312);
+\draw [c,line width=1.8] (3.2,2.33723) -- (3.2,13.7312);
+\draw [c,dotted,line width=0.9] (18.4,2.33723) -- (3.2,2.33723);
+\draw [c,dotted,line width=0.9] (18.4,3.85643) -- (3.2,3.85643);
+\draw [c,dotted,line width=0.9] (18.4,5.37563) -- (3.2,5.37563);
+\draw [c,dotted,line width=0.9] (18.4,6.89482) -- (3.2,6.89482);
+\draw [c,dotted,line width=0.9] (18.4,8.41402) -- (3.2,8.41402);
+\draw [c,dotted,line width=0.9] (18.4,9.93322) -- (3.2,9.93322);
+\draw [c,dotted,line width=0.9] (18.4,11.4524) -- (3.2,11.4524);
+\draw [c,dotted,line width=0.9] (18.4,12.9716) -- (3.2,12.9716);
+\draw [c,dotted,line width=0.9] (18.4,12.9716) -- (3.2,12.9716);
+\draw [c,line width=1.8] (18.4,2.33723) -- (18.4,13.7312);
+\draw [c,line width=1.8] (3.2,2.33723) -- (18.4,2.33723);
+\draw [anchor= east] (18.4,0.584307) node[scale=\AxisLSize, color=c, rotate=0]{$\log({E}_\nu/\si{GeV})$};
+\draw [c,line width=1.8] (3.32516,2.67028) -- (3.32516,2.33723);
+\draw [c,line width=1.8] (3.82582,2.50376) -- (3.82582,2.33723);
+\draw [c,line width=1.8] (4.32648,2.50376) -- (4.32648,2.33723);
+\draw [c,line width=1.8] (4.82714,2.50376) -- (4.82714,2.33723);
+\draw [c,line width=1.8] (5.3278,2.50376) -- (5.3278,2.33723);
+\draw [c,line width=1.8] (5.82846,2.67028) -- (5.82846,2.33723);
+\draw [c,line width=1.8] (6.32912,2.50376) -- (6.32912,2.33723);
+\draw [c,line width=1.8] (6.82978,2.50376) -- (6.82978,2.33723);
+\draw [c,line width=1.8] (7.33043,2.50376) -- (7.33043,2.33723);
+\draw [c,line width=1.8] (7.83109,2.50376) -- (7.83109,2.33723);
+\draw [c,line width=1.8] (8.33175,2.67028) -- (8.33175,2.33723);
+\draw [c,line width=1.8] (8.83241,2.50376) -- (8.83241,2.33723);
+\draw [c,line width=1.8] (9.33307,2.50376) -- (9.33307,2.33723);
+\draw [c,line width=1.8] (9.83373,2.50376) -- (9.83373,2.33723);
+\draw [c,line width=1.8] (10.3344,2.50376) -- (10.3344,2.33723);
+\draw [c,line width=1.8] (10.835,2.67028) -- (10.835,2.33723);
+\draw [c,line width=1.8] (11.3357,2.50376) -- (11.3357,2.33723);
+\draw [c,line width=1.8] (11.8364,2.50376) -- (11.8364,2.33723);
+\draw [c,line width=1.8] (12.337,2.50376) -- (12.337,2.33723);
+\draw [c,line width=1.8] (12.8377,2.50376) -- (12.8377,2.33723);
+\draw [c,line width=1.8] (13.3383,2.67028) -- (13.3383,2.33723);
+\draw [c,line width=1.8] (13.839,2.50376) -- (13.839,2.33723);
+\draw [c,line width=1.8] (14.3397,2.50376) -- (14.3397,2.33723);
+\draw [c,line width=1.8] (14.8403,2.50376) -- (14.8403,2.33723);
+\draw [c,line width=1.8] (15.341,2.50376) -- (15.341,2.33723);
+\draw [c,line width=1.8] (15.8416,2.67028) -- (15.8416,2.33723);
+\draw [c,line width=1.8] (16.3423,2.50376) -- (16.3423,2.33723);
+\draw [c,line width=1.8] (16.843,2.50376) -- (16.843,2.33723);
+\draw [c,line width=1.8] (17.3436,2.50376) -- (17.3436,2.33723);
+\draw [c,line width=1.8] (17.8443,2.50376) -- (17.8443,2.33723);
+\draw [c,line width=1.8] (18.3449,2.67028) -- (18.3449,2.33723);
+\draw [c,line width=1.8] (3.32516,2.67028) -- (3.32516,2.33723);
+\draw [c,line width=1.8] (18.3449,2.67028) -- (18.3449,2.33723);
+\draw [anchor=base] (3.32516,1.53381) node[scale=\TickLSize, color=c, rotate=0]{2};
+\draw [anchor=base] (5.82846,1.53381) node[scale=\TickLSize, color=c, rotate=0]{3};
+\draw [anchor=base] (8.33175,1.53381) node[scale=\TickLSize, color=c, rotate=0]{4};
+\draw [anchor=base] (10.835,1.53381)  node[scale=\TickLSize, color=c, rotate=0]{5};
+\draw [anchor=base] (13.3383,1.53381) node[scale=\TickLSize, color=c, rotate=0]{6};
+\draw [anchor=base] (15.8416,1.53381) node[scale=\TickLSize, color=c, rotate=0]{7};
+\draw [anchor=base] (18.3449,1.53381) node[scale=\TickLSize, color=c, rotate=0]{8};
+\draw [c,line width=1.8] (3.2,13.7312) -- (18.4,13.7312);
+\draw [c,line width=1.8] (3.32516,13.3982) -- (3.32516,13.7312);
+\draw [c,line width=1.8] (3.82582,13.5647) -- (3.82582,13.7312);
+\draw [c,line width=1.8] (4.32648,13.5647) -- (4.32648,13.7312);
+\draw [c,line width=1.8] (4.82714,13.5647) -- (4.82714,13.7312);
+\draw [c,line width=1.8] (5.3278,13.5647) -- (5.3278,13.7312);
+\draw [c,line width=1.8] (5.82846,13.3982) -- (5.82846,13.7312);
+\draw [c,line width=1.8] (6.32912,13.5647) -- (6.32912,13.7312);
+\draw [c,line width=1.8] (6.82978,13.5647) -- (6.82978,13.7312);
+\draw [c,line width=1.8] (7.33043,13.5647) -- (7.33043,13.7312);
+\draw [c,line width=1.8] (7.83109,13.5647) -- (7.83109,13.7312);
+\draw [c,line width=1.8] (8.33175,13.3982) -- (8.33175,13.7312);
+\draw [c,line width=1.8] (8.83241,13.5647) -- (8.83241,13.7312);
+\draw [c,line width=1.8] (9.33307,13.5647) -- (9.33307,13.7312);
+\draw [c,line width=1.8] (9.83373,13.5647) -- (9.83373,13.7312);
+\draw [c,line width=1.8] (10.3344,13.5647) -- (10.3344,13.7312);
+\draw [c,line width=1.8] (10.835,13.3982) -- (10.835,13.7312);
+\draw [c,line width=1.8] (11.3357,13.5647) -- (11.3357,13.7312);
+\draw [c,line width=1.8] (11.8364,13.5647) -- (11.8364,13.7312);
+\draw [c,line width=1.8] (12.337,13.5647) -- (12.337,13.7312);
+\draw [c,line width=1.8] (12.8377,13.5647) -- (12.8377,13.7312);
+\draw [c,line width=1.8] (13.3383,13.3982) -- (13.3383,13.7312);
+\draw [c,line width=1.8] (13.839,13.5647) -- (13.839,13.7312);
+\draw [c,line width=1.8] (14.3397,13.5647) -- (14.3397,13.7312);
+\draw [c,line width=1.8] (14.8403,13.5647) -- (14.8403,13.7312);
+\draw [c,line width=1.8] (15.341,13.5647) -- (15.341,13.7312);
+\draw [c,line width=1.8] (15.8416,13.3982) -- (15.8416,13.7312);
+\draw [c,line width=1.8] (16.3423,13.5647) -- (16.3423,13.7312);
+\draw [c,line width=1.8] (16.843,13.5647) -- (16.843,13.7312);
+\draw [c,line width=1.8] (17.3436,13.5647) -- (17.3436,13.7312);
+\draw [c,line width=1.8] (17.8443,13.5647) -- (17.8443,13.7312);
+\draw [c,line width=1.8] (18.3449,13.3982) -- (18.3449,13.7312);
+\draw [c,line width=1.8] (3.32516,13.3982) -- (3.32516,13.7312);
+\draw [c,line width=1.8] (18.3449,13.3982) -- (18.3449,13.7312);
+\draw [c,line width=1.8] (3.2,2.33723) -- (3.2,13.7312);
+\draw [anchor= east] (0.8,13.7312) node[scale=\AxisLSize, color=c, rotate=90]{median $\xi/\si{\degree}$};
+\draw [c,line width=1.8] (3.668,2.33723) -- (3.2,2.33723);
+\draw [c,line width=1.8] (3.434,2.71703) -- (3.2,2.71703);
+\draw [c,line width=1.8] (3.434,3.09683) -- (3.2,3.09683);
+\draw [c,line width=1.8] (3.434,3.47663) -- (3.2,3.47663);
+\draw [c,line width=1.8] (3.668,3.85643) -- (3.2,3.85643);
+\draw [c,line width=1.8] (3.434,4.23623) -- (3.2,4.23623);
+\draw [c,line width=1.8] (3.434,4.61603) -- (3.2,4.61603);
+\draw [c,line width=1.8] (3.434,4.99583) -- (3.2,4.99583);
+\draw [c,line width=1.8] (3.668,5.37563) -- (3.2,5.37563);
+\draw [c,line width=1.8] (3.434,5.75543) -- (3.2,5.75543);
+\draw [c,line width=1.8] (3.434,6.13523) -- (3.2,6.13523);
+\draw [c,line width=1.8] (3.434,6.51503) -- (3.2,6.51503);
+\draw [c,line width=1.8] (3.668,6.89482) -- (3.2,6.89482);
+\draw [c,line width=1.8] (3.434,7.27462) -- (3.2,7.27462);
+\draw [c,line width=1.8] (3.434,7.65442) -- (3.2,7.65442);
+\draw [c,line width=1.8] (3.434,8.03422) -- (3.2,8.03422);
+\draw [c,line width=1.8] (3.668,8.41402) -- (3.2,8.41402);
+\draw [c,line width=1.8] (3.434,8.79382) -- (3.2,8.79382);
+\draw [c,line width=1.8] (3.434,9.17362) -- (3.2,9.17362);
+\draw [c,line width=1.8] (3.434,9.55342) -- (3.2,9.55342);
+\draw [c,line width=1.8] (3.668,9.93322) -- (3.2,9.93322);
+\draw [c,line width=1.8] (3.434,10.313) -- (3.2,10.313);
+\draw [c,line width=1.8] (3.434,10.6928) -- (3.2,10.6928);
+\draw [c,line width=1.8] (3.434,11.0726) -- (3.2,11.0726);
+\draw [c,line width=1.8] (3.668,11.4524) -- (3.2,11.4524);
+\draw [c,line width=1.8] (3.434,11.8322) -- (3.2,11.8322);
+\draw [c,line width=1.8] (3.434,12.212) -- (3.2,12.212);
+\draw [c,line width=1.8] (3.434,12.5918) -- (3.2,12.5918);
+\draw [c,line width=1.8] (3.668,12.9716) -- (3.2,12.9716);
+\draw [c,line width=1.8] (3.668,12.9716) -- (3.2,12.9716);
+\draw [c,line width=1.8] (3.434,13.3514) -- (3.2,13.3514);
+\draw [anchor= east] (2.9,2.33723) node[scale=\TickLSize, color=c, rotate=0]{0};
+\draw [anchor= east] (2.9,3.85643) node[scale=\TickLSize, color=c, rotate=0]{2};
+\draw [anchor= east] (2.9,5.37563) node[scale=\TickLSize, color=c, rotate=0]{4};
+\draw [anchor= east] (2.9,6.89482) node[scale=\TickLSize, color=c, rotate=0]{6};
+\draw [anchor= east] (2.9,8.41402) node[scale=\TickLSize, color=c, rotate=0]{8};
+\draw [anchor= east] (2.9,9.93322) node[scale=\TickLSize, color=c, rotate=0]{10};
+\draw [anchor= east] (2.9,11.4524) node[scale=\TickLSize, color=c, rotate=0]{12};
+\draw [anchor= east] (2.9,12.9716) node[scale=\TickLSize, color=c, rotate=0]{14};
+\draw [c,line width=1.8] (18.4,2.33723) -- (18.4,13.7312);
+\draw [c,line width=1.8] (17.932,2.33723) -- (18.4,2.33723);
+\draw [c,line width=1.8] (18.166,2.71703) -- (18.4,2.71703);
+\draw [c,line width=1.8] (18.166,3.09683) -- (18.4,3.09683);
+\draw [c,line width=1.8] (18.166,3.47663) -- (18.4,3.47663);
+\draw [c,line width=1.8] (17.932,3.85643) -- (18.4,3.85643);
+\draw [c,line width=1.8] (18.166,4.23623) -- (18.4,4.23623);
+\draw [c,line width=1.8] (18.166,4.61603) -- (18.4,4.61603);
+\draw [c,line width=1.8] (18.166,4.99583) -- (18.4,4.99583);
+\draw [c,line width=1.8] (17.932,5.37563) -- (18.4,5.37563);
+\draw [c,line width=1.8] (18.166,5.75543) -- (18.4,5.75543);
+\draw [c,line width=1.8] (18.166,6.13523) -- (18.4,6.13523);
+\draw [c,line width=1.8] (18.166,6.51503) -- (18.4,6.51503);
+\draw [c,line width=1.8] (17.932,6.89482) -- (18.4,6.89482);
+\draw [c,line width=1.8] (18.166,7.27462) -- (18.4,7.27462);
+\draw [c,line width=1.8] (18.166,7.65442) -- (18.4,7.65442);
+\draw [c,line width=1.8] (18.166,8.03422) -- (18.4,8.03422);
+\draw [c,line width=1.8] (17.932,8.41402) -- (18.4,8.41402);
+\draw [c,line width=1.8] (18.166,8.79382) -- (18.4,8.79382);
+\draw [c,line width=1.8] (18.166,9.17362) -- (18.4,9.17362);
+\draw [c,line width=1.8] (18.166,9.55342) -- (18.4,9.55342);
+\draw [c,line width=1.8] (17.932,9.93322) -- (18.4,9.93322);
+\draw [c,line width=1.8] (18.166,10.313) -- (18.4,10.313);
+\draw [c,line width=1.8] (18.166,10.6928) -- (18.4,10.6928);
+\draw [c,line width=1.8] (18.166,11.0726) -- (18.4,11.0726);
+\draw [c,line width=1.8] (17.932,11.4524) -- (18.4,11.4524);
+\draw [c,line width=1.8] (18.166,11.8322) -- (18.4,11.8322);
+\draw [c,line width=1.8] (18.166,12.212) -- (18.4,12.212);
+\draw [c,line width=1.8] (18.166,12.5918) -- (18.4,12.5918);
+\draw [c,line width=1.8] (17.932,12.9716) -- (18.4,12.9716);
+\draw [c,line width=1.8] (17.932,12.9716) -- (18.4,12.9716);
+\draw [c,line width=1.8] (18.166,13.3514) -- (18.4,13.3514);
+\definecolor{c}{rgb}{1,0.6,0.2};
+\draw [c,line width=1.8] (5.01489,5.78961) -- (6.26653,4.49829) -- (7.51818,4.49829) -- (8.76983,4.34637) -- (10.0215,4.42233) -- (11.2731,4.72617) -- (12.5248,5.18193) -- (13.7764,5.78961) -- (15.0281,7.15689) -- (16.2797,8.67609) --
+ (17.5314,8.828);
+\foreach \P in {(5.01489,5.78961),(6.26653,4.49829),(7.51818,4.49829),(8.76983,4.34637),(10.0215,4.42233),(11.2731,4.72617),(12.5248,5.18193),(13.7764,5.78961),(15.0281,7.15689),(16.2797,8.67609),(17.5314,8.828)}{\draw[mark
+ options={color=c,fill=c},mark size=2.882883pt,mark=triangle*] plot coordinates {\P};}
+\draw [c,line width=1.8] (4.97482,5.78961) -- (4.57681,5.78961);
+\draw [c,line width=1.8] (4.57681,5.78961) -- (4.57681,5.78961);
+\draw [c,line width=1.8] (5.05495,5.78961) -- (5.82846,5.78961);
+\draw [c,line width=1.8] (5.82846,5.78961) -- (5.82846,5.78961);
+\draw [c,line width=1.8] (5.01489,5.85639) -- (5.01489,9.43948);
+\draw [c,line width=1.8] (5.01489,9.43948) -- (5.01489,9.43948);
+\draw [c,line width=1.8] (5.01489,5.72283) -- (5.01489,3.81845);
+\draw [c,line width=1.8] (5.01489,3.81845) -- (5.01489,3.81845);
+\draw [c,line width=1.8] (6.22647,4.49829) -- (5.82846,4.49829);
+\draw [c,line width=1.8] (5.82846,4.49829) -- (5.82846,4.49829);
+\draw [c,line width=1.8] (6.3066,4.49829) -- (7.08011,4.49829);
+\draw [c,line width=1.8] (7.08011,4.49829) -- (7.08011,4.49829);
+\draw [c,line width=1.8] (6.26653,4.56507) -- (6.26653,6.78088);
+\draw [c,line width=1.8] (6.26653,6.78088) -- (6.26653,6.78088);
+\draw [c,line width=1.8] (6.26653,4.43151) -- (6.26653,3.43865);
+\draw [c,line width=1.8] (6.26653,3.43865) -- (6.26653,3.43865);
+\draw [c,line width=1.8] (7.47812,4.49829) -- (7.08011,4.49829);
+\draw [c,line width=1.8] (7.08011,4.49829) -- (7.08011,4.49829);
+\draw [c,line width=1.8] (7.55825,4.49829) -- (8.33175,4.49829);
+\draw [c,line width=1.8] (8.33175,4.49829) -- (8.33175,4.49829);
+\draw [c,line width=1.8] (7.51818,4.56507) -- (7.51818,6.70492);
+\draw [c,line width=1.8] (7.51818,6.70492) -- (7.51818,6.70492);
+\draw [c,line width=1.8] (7.51818,4.43151) -- (7.51818,3.36269);
+\draw [c,line width=1.8] (7.51818,3.36269) -- (7.51818,3.36269);
+\draw [c,line width=1.8] (8.72976,4.34637) -- (8.33175,4.34637);
+\draw [c,line width=1.8] (8.33175,4.34637) -- (8.33175,4.34637);
+\draw [c,line width=1.8] (8.8099,4.34637) -- (9.5834,4.34637);
+\draw [c,line width=1.8] (9.5834,4.34637) -- (9.5834,4.34637);
+\draw [c,line width=1.8] (8.76983,4.41315) -- (8.76983,6.70492);
+\draw [c,line width=1.8] (8.76983,6.70492) -- (8.76983,6.70492);
+\draw [c,line width=1.8] (8.76983,4.27959) -- (8.76983,3.21077);
+\draw [c,line width=1.8] (8.76983,3.21077) -- (8.76983,3.21077);
+\draw [c,line width=1.8] (9.98141,4.42233) -- (9.5834,4.42233);
+\draw [c,line width=1.8] (9.5834,4.42233) -- (9.5834,4.42233);
+\draw [c,line width=1.8] (10.0615,4.42233) -- (10.835,4.42233);
+\draw [c,line width=1.8] (10.835,4.42233) -- (10.835,4.42233);
+\draw [c,line width=1.8] (10.0215,4.48911) -- (10.0215,7.54048);
+\draw [c,line width=1.8] (10.0215,7.54048) -- (10.0215,7.54048);
+\draw [c,line width=1.8] (10.0215,4.35555) -- (10.0215,3.28673);
+\draw [c,line width=1.8] (10.0215,3.28673) -- (10.0215,3.28673);
+\draw [c,line width=1.8] (11.2331,4.72617) -- (10.835,4.72617);
+\draw [c,line width=1.8] (10.835,4.72617) -- (10.835,4.72617);
+\draw [c,line width=1.8] (11.3132,4.72617) -- (12.0867,4.72617);
+\draw [c,line width=1.8] (12.0867,4.72617) -- (12.0867,4.72617);
+\draw [c,line width=1.8] (11.2731,4.79295) -- (11.2731,8.452);
+\draw [c,line width=1.8] (11.2731,8.452) -- (11.2731,8.452);
+\draw [c,line width=1.8] (11.2731,4.65939) -- (11.2731,3.36269);
+\draw [c,line width=1.8] (11.2731,3.36269) -- (11.2731,3.36269);
+\draw [c,line width=1.8] (12.4847,5.18193) -- (12.0867,5.18193);
+\draw [c,line width=1.8] (12.0867,5.18193) -- (12.0867,5.18193);
+\draw [c,line width=1.8] (12.5648,5.18193) -- (13.3383,5.18193);
+\draw [c,line width=1.8] (13.3383,5.18193) -- (13.3383,5.18193);
+\draw [c,line width=1.8] (12.5248,5.24871) -- (12.5248,10.1991);
+\draw [c,line width=1.8] (12.5248,10.1991) -- (12.5248,10.1991);
+\draw [c,line width=1.8] (12.5248,5.11515) -- (12.5248,3.51461);
+\draw [c,line width=1.8] (12.5248,3.51461) -- (12.5248,3.51461);
+\draw [c,line width=1.8] (13.7363,5.78961) -- (13.3383,5.78961);
+\draw [c,line width=1.8] (13.3383,5.78961) -- (13.3383,5.78961);
+\draw [c,line width=1.8] (13.8165,5.78961) -- (14.59,5.78961);
+\draw [c,line width=1.8] (14.59,5.78961) -- (14.59,5.78961);
+\draw [c,line width=1.8] (13.7764,5.85639) -- (13.7764,12.4019);
+\draw [c,line width=1.8] (13.7764,12.4019) -- (13.7764,12.4019);
+\draw [c,line width=1.8] (13.7764,5.72283) -- (13.7764,3.66653);
+\draw [c,line width=1.8] (13.7764,3.66653) -- (13.7764,3.66653);
+\draw [c,line width=1.8] (14.988,7.15689) -- (14.59,7.15689);
+\draw [c,line width=1.8] (14.59,7.15689) -- (14.59,7.15689);
+\draw [c,line width=1.8] (15.0681,7.15689) -- (15.8416,7.15689);
+\draw [c,line width=1.8] (15.8416,7.15689) -- (15.8416,7.15689);
+\draw [c,line width=1.8] (15.0281,7.22366) -- (15.0281,13.7312);
+\draw [c,line width=1.8] (15.0281,13.7312) -- (15.0281,13.7312);
+\draw [c,line width=1.8] (15.0281,7.09011) -- (15.0281,4.04633);
+\draw [c,line width=1.8] (15.0281,4.04633) -- (15.0281,4.04633);
+\draw [c,line width=1.8] (16.2396,8.67609) -- (15.8416,8.67609);
+\draw [c,line width=1.8] (15.8416,8.67609) -- (15.8416,8.67609);
+\draw [c,line width=1.8] (16.3198,8.67609) -- (17.0933,8.67609);
+\draw [c,line width=1.8] (17.0933,8.67609) -- (17.0933,8.67609);
+\draw [c,line width=1.8] (16.2797,8.74286) -- (16.2797,13.7312);
+\draw [c,line width=1.8] (16.2797,13.7312) -- (16.2797,13.7312);
+\draw [c,line width=1.8] (16.2797,8.60931) -- (16.2797,4.42613);
+\draw [c,line width=1.8] (16.2797,4.42613) -- (16.2797,4.42613);
+\draw [c,line width=1.8] (17.4913,8.828) -- (17.0933,8.828);
+\draw [c,line width=1.8] (17.0933,8.828) -- (17.0933,8.828);
+\draw [c,line width=1.8] (17.5714,8.828) -- (18.3449,8.828);
+\draw [c,line width=1.8] (18.3449,8.828) -- (18.3449,8.828);
+\draw [c,line width=1.8] (17.5314,8.89478) -- (17.5314,13.7312);
+\draw [c,line width=1.8] (17.5314,13.7312) -- (17.5314,13.7312);
+\draw [c,line width=1.8] (17.5314,8.76123) -- (17.5314,4.88189);
+\draw [c,line width=1.8] (17.5314,4.88189) -- (17.5314,4.88189);
+\definecolor{c}{rgb}{0,0,1};
+\draw [c,line width=1.8] (5.35032,4.6578) -- (4.57681,4.6578);
+\draw [c,line width=1.8] (4.57681,4.6578) -- (4.57681,4.6578);
+\draw [c,line width=1.8] (5.43045,4.6578) -- (5.82846,4.6578);
+\draw [c,line width=1.8] (5.82846,4.6578) -- (5.82846,4.6578);
+\draw [c,line width=1.8] (5.39038,4.72458) -- (5.39038,6.78088);
+\draw [c,line width=1.8] (5.39038,6.78088) -- (5.39038,6.78088);
+\draw [c,line width=1.8] (5.39038,4.59103) -- (5.39038,3.43865);
+\draw [c,line width=1.8] (5.39038,3.43865) -- (5.39038,3.43865);
+\draw [c,line width=1.8] (6.60196,4.42992) -- (5.82846,4.42992);
+\draw [c,line width=1.8] (5.82846,4.42992) -- (5.82846,4.42992);
+\draw [c,line width=1.8] (6.6821,4.42992) -- (7.08011,4.42992);
+\draw [c,line width=1.8] (7.08011,4.42992) -- (7.08011,4.42992);
+\draw [c,line width=1.8] (6.64203,4.4967) -- (6.64203,6.47705);
+\draw [c,line width=1.8] (6.64203,6.47705) -- (6.64203,6.47705);
+\draw [c,line width=1.8] (6.64203,4.36315) -- (6.64203,3.28673);
+\draw [c,line width=1.8] (6.64203,3.28673) -- (6.64203,3.28673);
+\draw [c,line width=1.8] (7.85361,4.27801) -- (7.08011,4.27801);
+\draw [c,line width=1.8] (7.08011,4.27801) -- (7.08011,4.27801);
+\draw [c,line width=1.8] (7.93374,4.27801) -- (8.33175,4.27801);
+\draw [c,line width=1.8] (8.33175,4.27801) -- (8.33175,4.27801);
+\draw [c,line width=1.8] (7.89368,4.34478) -- (7.89368,6.17321);
+\draw [c,line width=1.8] (7.89368,6.17321) -- (7.89368,6.17321);
+\draw [c,line width=1.8] (7.89368,4.21123) -- (7.89368,3.21077);
+\draw [c,line width=1.8] (7.89368,3.21077) -- (7.89368,3.21077);
+\draw [c,line width=1.8] (9.10526,4.12608) -- (8.33175,4.12608);
+\draw [c,line width=1.8] (8.33175,4.12608) -- (8.33175,4.12608);
+\draw [c,line width=1.8] (9.18539,4.12608) -- (9.5834,4.12608);
+\draw [c,line width=1.8] (9.5834,4.12608) -- (9.5834,4.12608);
+\draw [c,line width=1.8] (9.14532,4.19286) -- (9.14532,5.86937);
+\draw [c,line width=1.8] (9.14532,5.86937) -- (9.14532,5.86937);
+\draw [c,line width=1.8] (9.14532,4.05931) -- (9.14532,3.13481);
+\draw [c,line width=1.8] (9.14532,3.13481) -- (9.14532,3.13481);
+\draw [c,line width=1.8] (10.3569,3.97417) -- (9.5834,3.97417);
+\draw [c,line width=1.8] (9.5834,3.97417) -- (9.5834,3.97417);
+\draw [c,line width=1.8] (10.437,3.97417) -- (10.835,3.97417);
+\draw [c,line width=1.8] (10.835,3.97417) -- (10.835,3.97417);
+\draw [c,line width=1.8] (10.397,4.04094) -- (10.397,5.79341);
+\draw [c,line width=1.8] (10.397,5.79341) -- (10.397,5.79341);
+\draw [c,line width=1.8] (10.397,3.90739) -- (10.397,3.13481);
+\draw [c,line width=1.8] (10.397,3.13481) -- (10.397,3.13481);
+\draw [c,line width=1.8] (11.6086,4.05013) -- (10.835,4.05013);
+\draw [c,line width=1.8] (10.835,4.05013) -- (10.835,4.05013);
+\draw [c,line width=1.8] (11.6887,4.05013) -- (12.0867,4.05013);
+\draw [c,line width=1.8] (12.0867,4.05013) -- (12.0867,4.05013);
+\draw [c,line width=1.8] (11.6486,4.1169) -- (11.6486,6.09725);
+\draw [c,line width=1.8] (11.6486,6.09725) -- (11.6486,6.09725);
+\draw [c,line width=1.8] (11.6486,3.98335) -- (11.6486,3.13481);
+\draw [c,line width=1.8] (11.6486,3.13481) -- (11.6486,3.13481);
+\draw [c,line width=1.8] (12.8602,4.20204) -- (12.0867,4.20204);
+\draw [c,line width=1.8] (12.0867,4.20204) -- (12.0867,4.20204);
+\draw [c,line width=1.8] (12.9403,4.20204) -- (13.3383,4.20204);
+\draw [c,line width=1.8] (13.3383,4.20204) -- (13.3383,4.20204);
+\draw [c,line width=1.8] (12.9003,4.26882) -- (12.9003,7.00876);
+\draw [c,line width=1.8] (12.9003,7.00876) -- (12.9003,7.00876);
+\draw [c,line width=1.8] (12.9003,4.13527) -- (12.9003,3.13481);
+\draw [c,line width=1.8] (12.9003,3.13481) -- (12.9003,3.13481);
+\draw [c,line width=1.8] (14.1118,4.50588) -- (13.3383,4.50588);
+\draw [c,line width=1.8] (13.3383,4.50588) -- (13.3383,4.50588);
+\draw [c,line width=1.8] (14.192,4.50588) -- (14.59,4.50588);
+\draw [c,line width=1.8] (14.59,4.50588) -- (14.59,4.50588);
+\draw [c,line width=1.8] (14.1519,4.57266) -- (14.1519,8.452);
+\draw [c,line width=1.8] (14.1519,8.452) -- (14.1519,8.452);
+\draw [c,line width=1.8] (14.1519,4.43911) -- (14.1519,3.28673);
+\draw [c,line width=1.8] (14.1519,3.28673) -- (14.1519,3.28673);
+\draw [c,line width=1.8] (15.3635,5.34144) -- (14.59,5.34144);
+\draw [c,line width=1.8] (14.59,5.34144) -- (14.59,5.34144);
+\draw [c,line width=1.8] (15.4436,5.34144) -- (15.8416,5.34144);
+\draw [c,line width=1.8] (15.8416,5.34144) -- (15.8416,5.34144);
+\draw [c,line width=1.8] (15.4036,5.40822) -- (15.4036,11.9462);
+\draw [c,line width=1.8] (15.4036,11.9462) -- (15.4036,11.9462);
+\draw [c,line width=1.8] (15.4036,5.27467) -- (15.4036,3.43865);
+\draw [c,line width=1.8] (15.4036,3.43865) -- (15.4036,3.43865);
+\draw [c,line width=1.8] (16.6151,6.40488) -- (15.8416,6.40488);
+\draw [c,line width=1.8] (15.8416,6.40488) -- (15.8416,6.40488);
+\draw [c,line width=1.8] (16.6953,6.40488) -- (17.0933,6.40488);
+\draw [c,line width=1.8] (17.0933,6.40488) -- (17.0933,6.40488);
+\draw [c,line width=1.8] (16.6552,6.47166) -- (16.6552,13.7312);
+\draw [c,line width=1.8] (16.6552,13.7312) -- (16.6552,13.7312);
+\draw [c,line width=1.8] (16.6552,6.33811) -- (16.6552,3.66653);
+\draw [c,line width=1.8] (16.6552,3.66653) -- (16.6552,3.66653);
+\draw [c,line width=1.8] (17.8668,7.84812) -- (17.0933,7.84812);
+\draw [c,line width=1.8] (17.0933,7.84812) -- (17.0933,7.84812);
+\draw [c,line width=1.8] (17.9469,7.84812) -- (18.3449,7.84812);
+\draw [c,line width=1.8] (18.3449,7.84812) -- (18.3449,7.84812);
+\draw [c,line width=1.8] (17.9069,7.9149) -- (17.9069,13.7312);
+\draw [c,line width=1.8] (17.9069,13.7312) -- (17.9069,13.7312);
+\draw [c,line width=1.8] (17.9069,7.78134) -- (17.9069,4.04633);
+\draw [c,line width=1.8] (17.9069,4.04633) -- (17.9069,4.04633);
+\draw [c,line width=1.8] (5.39038,4.6578) -- (6.64203,4.42992) -- (7.89368,4.27801) -- (9.14532,4.12608) -- (10.397,3.97417) -- (11.6486,4.05013) -- (12.9003,4.20204) -- (14.1519,4.50588) -- (15.4036,5.34144) -- (16.6552,6.40488) --
+ (17.9069,7.84812);
+\foreach \P in {(5.39038,4.6578),(6.64203,4.42992),(7.89368,4.27801),(9.14532,4.12608),(10.397,3.97417),(11.6486,4.05013),(12.9003,4.20204),(14.1519,4.50588),(15.4036,5.34144),(16.6552,6.40488),(17.9069,7.84812)}{\draw[mark
+ options={color=c,fill=c},mark size=2.882883pt,mark=triangle*] plot coordinates {\P};}
+\definecolor{c}{rgb}{1,0,0};
+\draw [c,line width=1.8] (3.91092,4.04633) -- (3.32516,4.04633);
+\draw [c,line width=1.8] (3.32516,4.04633) -- (3.32516,4.04633);
+\draw [c,line width=1.8] (3.99105,4.04633) -- (4.57681,4.04633);
+\draw [c,line width=1.8] (4.57681,4.04633) -- (4.57681,4.04633);
+\draw [c,line width=1.8] (3.95099,4.1131) -- (3.95099,5.10977);
+\draw [c,line width=1.8] (3.95099,5.10977) -- (3.95099,5.10977);
+\draw [c,line width=1.8] (3.95099,3.97955) -- (3.95099,3.43865);
+\draw [c,line width=1.8] (3.95099,3.43865) -- (3.95099,3.43865);
+\draw [c,line width=1.8] (5.16257,4.57805) -- (4.57681,4.57805);
+\draw [c,line width=1.8] (4.57681,4.57805) -- (4.57681,4.57805);
+\draw [c,line width=1.8] (5.2427,4.57805) -- (5.82846,4.57805);
+\draw [c,line width=1.8] (5.82846,4.57805) -- (5.82846,4.57805);
+\draw [c,line width=1.8] (5.20263,4.64482) -- (5.20263,6.70492);
+\draw [c,line width=1.8] (5.20263,6.70492) -- (5.20263,6.70492);
+\draw [c,line width=1.8] (5.20263,4.51127) -- (5.20263,3.36269);
+\draw [c,line width=1.8] (5.20263,3.36269) -- (5.20263,3.36269);
+\draw [c,line width=1.8] (6.41422,4.35017) -- (5.82846,4.35017);
+\draw [c,line width=1.8] (5.82846,4.35017) -- (5.82846,4.35017);
+\draw [c,line width=1.8] (6.49435,4.35017) -- (7.08011,4.35017);
+\draw [c,line width=1.8] (7.08011,4.35017) -- (7.08011,4.35017);
+\draw [c,line width=1.8] (6.45428,4.41694) -- (6.45428,6.32513);
+\draw [c,line width=1.8] (6.45428,6.32513) -- (6.45428,6.32513);
+\draw [c,line width=1.8] (6.45428,4.28339) -- (6.45428,3.28673);
+\draw [c,line width=1.8] (6.45428,3.28673) -- (6.45428,3.28673);
+\draw [c,line width=1.8] (7.66586,4.12229) -- (7.08011,4.12229);
+\draw [c,line width=1.8] (7.08011,4.12229) -- (7.08011,4.12229);
+\draw [c,line width=1.8] (7.746,4.12229) -- (8.33175,4.12229);
+\draw [c,line width=1.8] (8.33175,4.12229) -- (8.33175,4.12229);
+\draw [c,line width=1.8] (7.70593,4.18906) -- (7.70593,5.86937);
+\draw [c,line width=1.8] (7.70593,5.86937) -- (7.70593,5.86937);
+\draw [c,line width=1.8] (7.70593,4.05551) -- (7.70593,3.13481);
+\draw [c,line width=1.8] (7.70593,3.13481) -- (7.70593,3.13481);
+\draw [c,line width=1.8] (8.91751,3.97037) -- (8.33175,3.97037);
+\draw [c,line width=1.8] (8.33175,3.97037) -- (8.33175,3.97037);
+\draw [c,line width=1.8] (8.99764,3.97037) -- (9.5834,3.97037);
+\draw [c,line width=1.8] (9.5834,3.97037) -- (9.5834,3.97037);
+\draw [c,line width=1.8] (8.95758,4.03715) -- (8.95758,5.64149);
+\draw [c,line width=1.8] (8.95758,5.64149) -- (8.95758,5.64149);
+\draw [c,line width=1.8] (8.95758,3.90359) -- (8.95758,3.05885);
+\draw [c,line width=1.8] (8.95758,3.05885) -- (8.95758,3.05885);
+\draw [c,line width=1.8] (10.1692,3.97037) -- (9.5834,3.97037);
+\draw [c,line width=1.8] (9.5834,3.97037) -- (9.5834,3.97037);
+\draw [c,line width=1.8] (10.2493,3.97037) -- (10.835,3.97037);
+\draw [c,line width=1.8] (10.835,3.97037) -- (10.835,3.97037);
+\draw [c,line width=1.8] (10.2092,4.03715) -- (10.2092,5.86937);
+\draw [c,line width=1.8] (10.2092,5.86937) -- (10.2092,5.86937);
+\draw [c,line width=1.8] (10.2092,3.90359) -- (10.2092,3.05885);
+\draw [c,line width=1.8] (10.2092,3.05885) -- (10.2092,3.05885);
+\draw [c,line width=1.8] (11.4208,4.12229) -- (10.835,4.12229);
+\draw [c,line width=1.8] (10.835,4.12229) -- (10.835,4.12229);
+\draw [c,line width=1.8] (11.5009,4.12229) -- (12.0867,4.12229);
+\draw [c,line width=1.8] (12.0867,4.12229) -- (12.0867,4.12229);
+\draw [c,line width=1.8] (11.4609,4.18906) -- (11.4609,6.85684);
+\draw [c,line width=1.8] (11.4609,6.85684) -- (11.4609,6.85684);
+\draw [c,line width=1.8] (11.4609,4.05551) -- (11.4609,3.13481);
+\draw [c,line width=1.8] (11.4609,3.13481) -- (11.4609,3.13481);
+\draw [c,line width=1.8] (12.6725,4.57805) -- (12.0867,4.57805);
+\draw [c,line width=1.8] (12.0867,4.57805) -- (12.0867,4.57805);
+\draw [c,line width=1.8] (12.7526,4.57805) -- (13.3383,4.57805);
+\draw [c,line width=1.8] (13.3383,4.57805) -- (13.3383,4.57805);
+\draw [c,line width=1.8] (12.7125,4.64482) -- (12.7125,8.75584);
+\draw [c,line width=1.8] (12.7125,8.75584) -- (12.7125,8.75584);
+\draw [c,line width=1.8] (12.7125,4.51127) -- (12.7125,3.28673);
+\draw [c,line width=1.8] (12.7125,3.28673) -- (12.7125,3.28673);
+\draw [c,line width=1.8] (13.9241,5.71745) -- (13.3383,5.71745);
+\draw [c,line width=1.8] (13.3383,5.71745) -- (13.3383,5.71745);
+\draw [c,line width=1.8] (14.0042,5.71745) -- (14.59,5.71745);
+\draw [c,line width=1.8] (14.59,5.71745) -- (14.59,5.71745);
+\draw [c,line width=1.8] (13.9642,5.78422) -- (13.9642,12.4019);
+\draw [c,line width=1.8] (13.9642,12.4019) -- (13.9642,12.4019);
+\draw [c,line width=1.8] (13.9642,5.65067) -- (13.9642,3.59057);
+\draw [c,line width=1.8] (13.9642,3.59057) -- (13.9642,3.59057);
+\draw [c,line width=1.8] (15.1757,9.9712) -- (14.59,9.9712);
+\draw [c,line width=1.8] (14.59,9.9712) -- (14.59,9.9712);
+\draw [c,line width=1.8] (15.2559,9.9712) -- (15.8416,9.9712);
+\draw [c,line width=1.8] (15.8416,9.9712) -- (15.8416,9.9712);
+\draw [c,line width=1.8] (15.2158,10.038) -- (15.2158,13.7312);
+\draw [c,line width=1.8] (15.2158,13.7312) -- (15.2158,13.7312);
+\draw [c,line width=1.8] (15.2158,9.90442) -- (15.2158,4.57805);
+\draw [c,line width=1.8] (15.2158,4.57805) -- (15.2158,4.57805);
+\draw [c,line width=1.8] (16.4274,10.275) -- (15.8416,10.275);
+\draw [c,line width=1.8] (15.8416,10.275) -- (15.8416,10.275);
+\draw [c,line width=1.8] (16.5075,10.275) -- (17.0933,10.275);
+\draw [c,line width=1.8] (17.0933,10.275) -- (17.0933,10.275);
+\draw [c,line width=1.8] (16.4675,10.3418) -- (16.4675,13.7312);
+\draw [c,line width=1.8] (16.4675,13.7312) -- (16.4675,13.7312);
+\draw [c,line width=1.8] (16.4675,10.2083) -- (16.4675,4.88189);
+\draw [c,line width=1.8] (16.4675,4.88189) -- (16.4675,4.88189);
+\draw [c,line width=1.8] (17.679,13.3894) -- (17.0933,13.3894);
+\draw [c,line width=1.8] (17.0933,13.3894) -- (17.0933,13.3894);
+\draw [c,line width=1.8] (17.7592,13.3894) -- (18.3449,13.3894);
+\draw [c,line width=1.8] (18.3449,13.3894) -- (18.3449,13.3894);
+\draw [c,line width=1.8] (17.7191,13.4562) -- (17.7191,13.7312);
+\draw [c,line width=1.8] (17.7191,13.7312) -- (17.7191,13.7312);
+\draw [c,line width=1.8] (17.7191,13.3226) -- (17.7191,6.02129);
+\draw [c,line width=1.8] (17.7191,6.02129) -- (17.7191,6.02129);
+\draw [c,line width=1.8] (3.95099,4.04633) -- (5.20263,4.57805) -- (6.45428,4.35017) -- (7.70593,4.12229) -- (8.95758,3.97037) -- (10.2092,3.97037) -- (11.4609,4.12229) -- (12.7125,4.57805) -- (13.9642,5.71745) -- (15.2158,9.9712) -- (16.4675,10.275)
+ -- (17.7191,13.3894);
+\foreach \P in {(3.95099,4.04633),(5.20263,4.57805),(6.45428,4.35017),(7.70593,4.12229),(8.95758,3.97037),(10.2092,3.97037),(11.4609,4.12229),(12.7125,4.57805),(13.9642,5.71745),(15.2158,9.9712),(16.4675,10.275),(17.7191,13.3894)}{\draw[mark
+ options={color=c,fill=c},mark size=2.882883pt,mark=triangle*] plot coordinates {\P};}
+\definecolor{darkred}{rgb}{0.5,0,0};
+\draw [color=white, fill=white] (7,10.9558) rectangle (11.6,13.1469);
+\definecolor{c}{rgb}{0,0,0};
+\draw [c,line width=1.8] (7,10.9558) -- (11.6,10.9558);
+\draw [c,line width=1.8] (11.6,10.9558) -- (11.6,13.1469);
+\draw [c,line width=1.8] (11.6,13.1469) -- (7,13.1469);
+\draw [c,line width=1.8] (7,13.1469) -- (7,10.9558);
+\draw [anchor=base west] (8.15,12.6174) node[scale=1.5, color=c, rotate=0]{$\nu_{e}$ CC};
+\definecolor{c}{rgb}{1,0,0};
+\draw [c,line width=1.8] (7.575,12.5626) -- (7.575,13.0008);
+\foreach \P in {(7.575,12.7817)}{\draw[mark options={color=c,fill=c},mark size=2.882883pt,mark=triangle*] plot coordinates {\P};}
+\definecolor{c}{rgb}{0,0,0};
+\draw [anchor=base west] (8.15,11.887) node[scale=1.5, color=c, rotate=0]{$\nu_{x}$ NC};
+\definecolor{c}{rgb}{0,0,1};
+\draw [c,line width=1.8] (7.575,11.8322) -- (7.575,12.2705);
+\foreach \P in {(7.575,12.0513)}{\draw[mark options={color=c,fill=c},mark size=2.882883pt,mark=triangle*] plot coordinates {\P};}
+\definecolor{c}{rgb}{0,0,0};
+\draw [anchor=base west] (8.15,11.1566) node[scale=1.5, color=c, rotate=0]{$\nu_{\mu}$ CC};
+\definecolor{c}{rgb}{1,0.6,0.2};
+\draw [c,line width=1.8] (7.575,11.1018) -- (7.575,11.5401);
+\foreach \P in {(7.575,11.321)}{\draw[mark options={color=c,fill=c},mark size=2.882883pt,mark=triangle*] plot coordinates {\P};}
+\end{tikzpicture}

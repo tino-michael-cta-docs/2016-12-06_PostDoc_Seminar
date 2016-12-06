@@ -1,0 +1,832 @@
+\documentclass[8pt]{beamer}
+
+\usepackage[utf8]{inputenc}       % mit fontenc: Umlaute und ß (sz) direkt eingeben
+\usepackage[T1]{fontenc}          % ^...^
+
+\usepackage{libertine}
+\usepackage{color}
+\usepackage{graphicx}
+
+\usepackage{booktabs}             % table decorations
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}             % calligraphie
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=newest}
+\newlength{\figurewidth}
+\setlength{\figurewidth}{6cm}
+\newlength{\figureheight}
+\setlength{\figureheight}{5cm}
+
+
+\usepackage{siunitx}    
+\newcommand\unit[2]{\SI{#1}{#2}}
+
+\def\TickLSize{2.5}
+\def\AxisLSize{3}
+
+% \usepackage{feynmf}%%%{feynmp}    % Feynman Diagramme
+% \unitlength=1mm
+
+% \usepackage[percent]{overpic}     % draw text atop of pictures
+
+\usepackage{tikz}                 % drawing shapes
+\usepgflibrary{shapes}
+\usetikzlibrary{plotmarks,patterns,calc,decorations.markings,arrows,intersections,decorations.pathmorphing}
+\tikzset{snake it/.style={decorate, decoration=snake}}
+
+
+
+% \usepackage{pgffor}               % for-loop
+
+% \usepackage{pdfpages}
+
+
+
+
+
+
+\usetheme{Warsaw}
+\useoutertheme{infolines}
+
+\usecolortheme{rose}                            % invertiert fg/bg von block-titeln
+\usecolortheme{beaver}                          % helles, rotes outercolortheme
+\usecolortheme[rgb={0.5,0,0}]{structure}        % setzt innere fg color auf dunkelrot
+\beamertemplatenavigationsymbolsempty
+
+
+
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+
+\def\mydate{\leavevmode\hbox{\the\year-\twodigits\month-\twodigits\day}}
+\def\twodigits#1{\ifnum#1<10 0\fi\the#1}
+
+
+\title{An analysis chain for CTA to test novel methods}
+% \subtitle{}
+\author[Tino Michael]{Tino Michael\vspace{-12pt}}
+\institute[CEA Saclay]{CEA Saclay, Irfu/SAp}
+% \institute[CEA]{Commissariat à l'énergie atomique et aux énergies alternatives}
+\titlegraphic{ 
+    \begin{tikzpicture}
+        \node (centre) at (10,20) {\includegraphics[height=40pt]{/home/ichanmich/Desktop/Talks/Pictures/CEA_logo_2012.png}};
+        \node[anchor=west] at ([xshift=-150pt]centre) {\includegraphics[height=40pt]{/home/ichanmich/Desktop/Talks/Pictures/asterics_logo.png}};
+        \node[anchor=east] at ([xshift=+150pt]centre) {\includegraphics[height=40pt]{/home/ichanmich/Desktop/Talks/Pictures/cta_logo_blue.png}};
+    \end{tikzpicture}
+}
+\date[\mydate]{SAp PostDoc Seminar\\\mydate}
+
+
+\begin{document}
+
+    \definecolor{darkred}{rgb}{0.5,0,0}
+    \setbeamertemplate{section in toc}[circle]
+    \setbeamerfont{section number projected}{%
+        family=\rmfamily,series=\bfseries,size=\normalsize}
+    \setbeamercolor{section number projected}{bg=white,fg=darkred}
+
+
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+    
+    \begin{frame}{The Road so far}
+        \begin{columns}
+            \column{.5\textwidth}
+                \begin{itemize}
+                    \item[]\textbf{2006 -- 2011:} Physics at TU Dresden
+                    \begin{itemize}
+                        \item specialisation: nuclear and particle physics
+                        \item diploma thesis on ATLAS detector
+                    \end{itemize}
+
+                    \item[]
+                    \item[]\textbf{2012 -- 2016:} ANTARES at Nikhef, Amsterdam
+                    \begin{itemize}
+                        \item event reconstruction,
+                        \item neutrino point-source search
+                        \item first prototype optical module for KM3NeT
+                        \item \textbf{2016-05:} PhD thesis defended
+                    \end{itemize}
+                    
+                    \item[]
+                    \item[]\textbf{2016-04:} CTA at CEA
+                        \begin{itemize}
+                            \item working with Thierry Stolarczyk
+                            \item implementing analysis chain for CTA
+                            \item testing impact of novel methods on:
+                            \item event reconstruction, gamma-hadron separation, sensitivity
+                            \item Room Number: 120
+                        \end{itemize}
+                \end{itemize}
+
+            \column{.5\textwidth}
+                \only<1>{\Put(0,0){\includegraphics[width=\linewidth]{pics/TU_Dresden}}}
+                \only<2>{\Put(0,0){\includegraphics[width=\linewidth]{pics/DOMs}}}
+                \only<3>{\Put(0,0){\includegraphics[width=.95\linewidth]{/home/ichanmich/Desktop/Talks/Pictures/Cta_concept}}}
+            
+        \end{columns}
+    \end{frame}
+
+    
+    
+    \begin{frame}
+        \frametitle{ANTARES -- The Detector}
+        \begin{columns}
+            \column{.6\textwidth}
+                \centering
+                \includegraphics[width = \textwidth]{"pics/antares_pub"}
+            \column{.4\textwidth}
+                \begin{itemize}
+                    \item $\unit{2500}{\metre}$ below sea surface
+                    \item $\unit{40}{\kilo\metre}$ off the coast of Toulon, France
+                    \item connected via electro-optical cable
+                    \item[]
+                    \item complete since 2008-05
+                    \item 12 Lines, 885 PMTs
+                    \item radius: $\unit{90}{\metre}$\\ height: $\unit{400}{\metre}$
+                    \item $\unit{0.5}{\nano\second}$ time resolution
+                    \item $< \unit{10}{\centi\metre}$ acoustic positioning
+                \end{itemize}
+        \end{columns}
+    \end{frame}
+
+    
+    
+    \begin{frame}
+        \frametitle{Event Reconstruction}
+        \centering
+        \begin{columns}
+            \column{.4\textwidth}
+                \Large Muon:\\\vspace{6pt}
+                \begin{tikzpicture}
+                    \coordinate (vert) at (1.5,1.);
+                    \draw [line width=4mm,join=round,blue!10,fill=blue!10] (-0.5,0)  rectangle (4,5);
+                    \draw[dashed,-stealth] (1,0) -- (vert) node[midway,right] {$\nu_\mu$};
+                    \fill[black] (vert) circle (1.5pt);
+                    \draw[-stealth] (vert) -- +(80:3.5) node [midway,left] {$\mu$} coordinate (muend);
+                    \draw[blue,snake it,-stealth] ($(vert) ! .1 ! (muend)$) -- +( 38:1.6) ;
+                    \draw[blue,snake it,-stealth] ($(vert) ! .4 ! (muend)$) -- +( 38:1.6) ;
+                    \draw[blue,snake it,-stealth] ($(vert) ! .8 ! (muend)$) -- +( 38:1.6) node [label=0:{$\gamma$}] {};
+                    \draw[blue,snake it,-stealth] ($(vert) ! .3 ! (muend)$) -- +(122:1.6) ;
+                    \draw[blue,snake it,-stealth] ($(vert) ! .7 ! (muend)$) -- +(122:1.6) ;
+                
+                \end{tikzpicture}
+            \column{.05\textwidth}
+            \ \\
+            \column{.4\textwidth}
+                \Large em-Shower:\\\vspace{6pt}
+                \begin{tikzpicture}
+                \only<1>{
+                    \draw [line width=4mm,join=round,blue!10,fill=blue!10] (-0.5,0)  rectangle (4,5);
+                    \draw[dashed,-stealth] (1,0) -- (vert) node[midway,right] {$\nu_e$};
+                    \fill[black] (vert) circle (1.5pt);
+                    \draw (vert) -- +(70:.5);
+                    \draw (vert) -- +(89:.5);
+                    \draw ([shift=(78:.3)]vert) -- +(60:.5);
+                    \draw ([shift=(82:.3)]vert) -- +(100:.5);
+                    
+                    \draw ([shift=(80:.5)]vert) -- +(74:.5);           \draw ([shift=(85:.5)]vert) -- +(90:.5);
+                    \draw ([shift=(70:.6)]vert) -- +(70:.5);           \draw ([shift=(90:.6)]vert) -- +(91:.5);
+                    \draw ([shift=(70:.6)]vert) -- +(50:.5);           \draw ([shift=(90:.6)]vert) -- +(110:.5);
+                    \draw ([shift=(75:.9)]vert) -- +(75:.5);           \draw ([shift=(85:.9)]vert) -- +(85:.5);
+                    \draw ([shift=(75:1.1)]vert) -- +(70:.5);          \draw ([shift=(85:1.1)]vert) -- +(90:.5);
+                    \draw ([shift=(65:1.1)]vert) -- +(85:.5);          \draw ([shift=(95:1.1)]vert) -- +(75:.5);
+                    \draw ([shift=(78:1.1)]vert) -- +(50:.5);          \draw ([shift=(82:1.1)]vert) -- +(110:.5);
+                    \draw ([shift=(77:1.3)]vert) -- +(80:.5);          \draw ([shift=(83:1.3)]vert) -- +(80:.5);
+                    \draw ([shift=(75:1.5)]vert) -- +(70:.5);          \draw ([shift=(85:1.5)]vert) -- +(91:.5);
+                    \draw ([shift=(69:1.5)]vert) -- +(85:.5);          \draw ([shift=(91:1.5)]vert) -- +(75:.5);
+                    \draw ([shift=(65:1.5)]vert) -- +(65:.5);          \draw ([shift=(95:1.5)]vert) -- +(95:.5);
+                    \draw ([shift=(66:.9)]vert) -- +(65:.5);           \draw ([shift=(94:.9)]vert) -- +(95:.5);
+                    \draw ([shift=(71:1.15)]vert) -- +(65:.5);         \draw ([shift=(89:1.15)]vert) -- +(95:.5);
+                    \draw ([shift=(71:2.1)]vert) -- +(67:.5);          \draw ([shift=(89:2.1)]vert) -- +(93:.5);
+                    \draw ([shift=(68:1.7)]vert) -- +(70:.5);          \draw ([shift=(92:1.7)]vert) -- +(91:.5);
+                    \draw ([shift=(78:1.85)]vert) -- +(75:.5);         \draw ([shift=(82:1.85)]vert) -- +(85:.5);
+                    \draw ([shift=(74:2.05)]vert) -- +(70:.5);         \draw ([shift=(86:2.05)]vert) -- +(91:.5);
+                    \draw ([shift=(79:2.5)]vert) -- +(65:.5);          \draw ([shift=(81:2.5)]vert) -- +(95:.5);
+                    \draw ([shift=(80:2.2)]vert) -- +(80:.5);          \draw ([shift=(80:.9)]vert) -- +(80:.7);
+                    \draw ([shift=(82:2.5)]vert) -- +(79:.5);          \draw ([shift=(79:2.6)]vert) -- +(82:.5);
+                    \draw ([shift=(76:2.4)]vert) -- +(55:.5);          \draw ([shift=(84:2.4)]vert) -- +(105:.5);
+                    \draw ([shift=(69:1.5)]vert) -- +(60:.5);          \draw ([shift=(91:1.5)]vert) -- +(100:.5);
+                    \draw ([shift=(67:1.1)]vert) -- +(50:.5);          \draw ([shift=(93:1.1)]vert) -- +(110:.5);
+                    \draw[blue,snake it,-stealth] ([shift=(100:2.5)]vert) -- +(122:1.6) ;
+                    \draw[blue,snake it,-stealth] ([shift=(55:2.2)]vert) -- +(38:1.6) node [label=180:{$\gamma$}] {};
+                    \draw[blue,snake it,-stealth] ([shift=(45:1.5)]vert) -- +(-20:1.6) ;
+                    \draw[blue,snake it,-stealth] ([shift=(120:1.)]vert) -- +(200:1.6) ;
+                }
+                \end{tikzpicture}
+        \end{columns}
+        
+    \end{frame}
+
+    
+    \begin{frame}
+        \frametitle{Sensitivity and Limits}
+        \begin{columns}
+            \column{.45\textwidth}
+                \begin{itemize}
+                    \item no significant cluster in Full Sky Search
+                    \item[]
+                    \item Sensitivity improved from\\
+                        $\unit{1.4e-8}{GeV\,cm^{-2}\,s^{-1}}$ to $\unit{7.2e-9}{GeV\,cm^{-2}\,s^{-1}}$
+                    \item best limits for many candidates in\\galactic region from single experiment
+                    \item challenged only by combined ANTARES/IceCube analysis
+                    \item[]
+                \end{itemize}
+
+            \column{.55\textwidth}
+                \resizebox{\textwidth}{!}{%
+                    \input{plots/ANTARES/SearchResults/Limits_fixed}%
+                }%
+            \end{columns}
+        
+    \end{frame}
+
+    
+    \begin{frame}
+        \frametitle{CTA -- Detector}
+        \centering
+        \includegraphics[page=4,width=.9\textwidth]{pics/CTA/OBELICS-CEA.pdf}
+        
+    \end{frame}
+    
+        
+    \begin{frame}
+        \frametitle{CTA -- Detection Principle}
+        \centering
+        \includegraphics[page=5,trim=8cm 8cm 0 0,clip,width=.9\textwidth]{pics/CTA/OBELICS-CEA.pdf}
+        
+    \end{frame}
+    
+    
+    \begin{frame}
+        \frametitle{CTA -- Telescope Array}
+        \centering
+        \includegraphics[width=.9\textwidth]{pics/CTA/cta_array_view.jpg}\\
+        \vspace{6pt}
+        \begin{minipage}{.25\textwidth}
+            \begin{itemize}
+                \item sites chosen:
+                \item[] La Palma, Spain and Paranal, Chile
+            \end{itemize}
+        \end{minipage}%
+        \begin{minipage}{.4\textwidth}
+            \begin{itemize}
+                \item many prototypes already built 
+                \item construction of first foundation started
+            \end{itemize}
+        \end{minipage}%
+        
+    \end{frame}
+    
+    
+    
+    \begin{frame}
+        \centering
+        \begin{tikzpicture}
+            
+            \node[anchor=center] (lst) at (0,0) {\includegraphics[width=.45\textwidth]{pics/CTA/LST_LaPalma_construction_foundation}};
+            
+            \node[anchor=north] (astri) at (lst.south){\includegraphics[width=.45\textwidth]{pics/CTA/SST_ASTRI_SerraLaNave}};
+            
+            \node[anchor=north west] (sst) at (lst.north east) {\includegraphics[height=.35\textheight]{pics/CTA/SST_Meudon}};
+
+            \node[anchor=north] (mst) at (sst.south) {\includegraphics[height=.5\textheight]{pics/CTA/MST_Zeuthen}};
+
+            
+        \end{tikzpicture}
+
+    \end{frame}
+
+    
+    
+    \begin{frame}{CTA -- Telescope Sizes}
+        \centering
+        \begin{minipage}{.075\textwidth}
+        \ \\
+        \end{minipage}%
+        \begin{minipage}{.25\textwidth}
+            \begin{itemize}
+                \item[] LST
+                \item 4 at both sites
+                \item $E_\gamma < \unit{.1}{TeV}$
+                \item FoV: \unit{4.5}{\degree}
+            \end{itemize}
+        \end{minipage}%
+        \begin{minipage}{.33\textwidth}
+            \begin{itemize}
+                \item[] MST
+                \item 25 at south; 15 at north site
+                \item $0.1 < E_\gamma/\si{TeV} < 100$
+                \item FoV: $> \unit{7}{\degree}$
+            \end{itemize}
+        \end{minipage}%
+        \begin{minipage}{.3\textwidth}
+            \begin{itemize}
+                \item[] SST
+                \item 70 south site only
+                \item $E_\gamma > \unit{10}{TeV}$
+                \item FoV: \unit{10}{\degree}
+            \end{itemize}
+        \end{minipage}\\
+        \vspace{12pt}
+        \includegraphics[width=.8\textwidth]{/home/ichanmich/Desktop/Talks/CTA_Pictures//telescope_sizes}\\
+        
+     \end{frame}
+
+    
+    
+    \begin{frame}
+        \frametitle{CTA -- Galactic Plane Survey}
+        \centering
+        \begin{tikzpicture}
+            \node[anchor = center] (cta) at (0,0) { \includegraphics[trim=2.5mm 0 0 4mm,clip,width=.7\textwidth]{pics/CTA/image3} };
+            \node[anchor = north] (hess) at (cta.south) { \includegraphics[trim=12.6cm 2.75cm 11.8cm 2.75cm,clip,width=.7\textwidth]{pics/CTA/image4} };
+            \node[anchor = south] (broad) at (cta.north) { \includegraphics[width=\textwidth]{pics/CTA/image6} };
+            \draw[white, dashed] (cta.north) -- (hess.south);
+            \draw[white, dashed] (cta.east) -- (cta.west);
+            \draw[white, dashed] (hess.east) -- (hess.west);
+            \node[white, anchor = north east] at ([xshift=-2mm,yshift=-1mm]cta.north east) {CTA simulated};
+            \node[white, anchor = north east] at ([xshift=-2mm,yshift=-1mm]hess.north east) {HESS};
+        \end{tikzpicture}
+
+%         \includegraphics[width=.9\textwidth]{pics/CTA/galactic_plane_survey_hess_cta.png}\\
+        \vspace{12pt}
+        \begin{columns}
+            \column{.46\textwidth}
+                \begin{itemize}
+                    \item better sensitivity and resolution w.r.t. HESS
+                    \item resolve overlapping extended sources
+                \end{itemize}
+
+            \column{.4\textwidth}
+                \begin{itemize}
+                    \item viewing distance of \unit{20}{kpc}
+                    \item expect population increase $\times 5$
+                \end{itemize}
+        \end{columns}
+
+    \end{frame}
+    
+    
+    
+%     \begin{frame}{CTA -- new Software Framework}
+%         \begin{itemize}
+%             \item one of the main developers of CTA software framework
+%             \item mostly in written python and open on github
+%             \item implemented full analysis chain
+%             \item very modular to easily test new methods
+%         \end{itemize}
+%     
+%     \end{frame}
+
+    
+    \begin{frame}
+        \frametitle{How the Signal looks like}
+        \begin{columns}
+            \column{.35\textwidth}
+                \centering
+                Shower Signal
+                \begin{tikzpicture}
+                    \node[anchor=south west] (pic) at (0,0) {\includegraphics[trim=0 0 2cm 0,clip,width=\textwidth]{pics/img_pe}};
+                    \draw[white,fill=white] (pic.south west) rectangle ($(pic.north west)!0.15!(pic.north east)$);
+                    \draw[white,fill=white] (pic.north west) rectangle ($(pic.north east)!0.11!(pic.south east)$);
+                    \draw[white,fill=white] (pic.south west) rectangle ($(pic.south east)!0.115!(pic.north east)$);
+                    \foreach \x in {-1.5,-1,...,1.5}{
+                        \node[scale=1.,anchor=north] at (\x*10mm + 21.7mm, 4.5mm) {$\x$};
+                        \node[scale=1.,anchor=east]  at (7.mm,\x*10mm + 19.mm ) {$\x$};
+                    }
+                    \node[anchor=south east]           at ([xshift=-5mm,yshift=-2.5mm]pic.south east) {$x_\mathrm{pixel} / \si{m}$};
+                    \node[anchor=north east,rotate=90] at ([xshift=-2mm,yshift=-5mm]pic.north west) {$y_\mathrm{pixel} / \si{m}$};
+                \end{tikzpicture}
+                
+            \pause
+            \column{.15\textwidth}
+                \centering
+                \vspace{.2cm}\ \\
+                Stars, Clouds, \\
+                Electronics etc.\\
+                $\longrightarrow$\\
+                \vspace{.7cm}
+                \only<2>{
+                    \ \\
+                    \ \\
+                    \ }
+                \only<3->{
+                    $\longleftarrow$\\
+                    How to get back?
+                }
+            \column{.35\textwidth}
+                \centering
+                Detector Response
+                \begin{tikzpicture}
+                    \node[anchor=south west] (pic) at (0,0) {\includegraphics[trim=0 0 2cm 0,clip,width=\textwidth]{pics/img}};
+                    \draw[white,fill=white] (pic.south west) rectangle ($(pic.north west)!0.15!(pic.north east)$);
+                    \draw[white,fill=white] (pic.north west) rectangle ($(pic.north east)!0.11!(pic.south east)$);
+                    \draw[white,fill=white] (pic.south west) rectangle ($(pic.south east)!0.115!(pic.north east)$);
+                    \foreach \x in {-1.5,-1,...,1.5}{
+                        \node[scale=1.,anchor=north] at (\x*10mm + 21.7mm, 4.5mm) {$\x$};
+                        \node[scale=1.,anchor=east]  at (7mm,\x*10mm + 19.mm ) {$\x$};
+                    }
+                    \node[anchor=south east]           at ([xshift=-5mm,yshift=-2.5mm]pic.south east) {$x_\mathrm{pixel} / \si{m}$};
+                    \node[anchor=north east,rotate=90] at ([xshift=-2mm,yshift=-5mm]pic.north west) {$y_\mathrm{pixel} / \si{m}$};
+                \end{tikzpicture}
+                
+        \end{columns}
+        \vspace{12pt}
+        \pause
+        \pause
+        \begin{description}
+            \item[] \hspace{-55pt}possible solutions:
+            \item [Tail-Cuts] Used by H.E.S.S.: Cut away all pixels below a given threshold\\ -- possibly recover neighbouring pixels through second, lower threshold.
+%             \medskip
+            \item [Fourier Trans.] Decompose image into Fourier coefficients and cut in Fourier space.
+%             \medskip
+            \item [Wavelet Trans.] Decompose image into waveletes (in contrast to waves) and cut there.
+        \end{description}
+    
+    \end{frame}
+
+
+    \begin{frame}{Comparing Methods}
+        \centering
+        \includegraphics[width=.45\textwidth]{pics/CT066}
+        \hspace{5mm}
+        \includegraphics[width=.45\textwidth]{pics/CT066_tailcut_denoised}\\
+        \includegraphics[width=.45\textwidth]{pics/CT066_dft_denoised}
+        \hspace{5mm}
+        \includegraphics[width=.45\textwidth]{pics/CT066_wt_denoised}
+        
+    \end{frame}
+
+    
+    \begin{frame}{Shower Reconstruction}
+        \begin{columns}
+            \column{.6\textwidth}
+                \begin{tikzpicture}
+                \only<1>{
+                    \node[anchor = center] (pic1) at (0,0) {
+                        \includegraphics[trim=17cm 10cm 32cm .85cm,clip, width=\textwidth]{pics/hillas_overlay}
+                    };
+                }
+                \only<2->{
+                    \node[anchor = center] (pic1) at (0,0) {
+                        \includegraphics[trim=17cm .2cm 32cm 10.85cm,clip, width=\textwidth]{pics/hillas_overlay}
+                    };
+                }
+                \only<3->{
+                    \draw[line width=.4mm,green] (0,5.8mm) -- +(240.5:2cm);
+                    \draw[line width=.4mm,green] (0,4.2mm) -- +(200:2cm);
+                    \draw[line width=.4mm,green] (0,3.9mm) -- +(188:2cm);
+                }
+                \end{tikzpicture}
+            \column{.4\textwidth}
+                \begin{itemize}
+                    \item construct an ellipsis with moments of the shower image:\\
+                    \emph{Hillas Parametrisation}
+                    \pause
+                    \item combine images from different cameras
+                    \pause
+                    \item intersection of their ellipsis axes is
+                        the shower origin
+                \end{itemize}
+
+        \end{columns}
+
+    \end{frame}
+
+    
+    
+    \begin{frame}{Shower Reconstruction -- Performance}
+                 {angle between reconstructed and simulated direction}
+        \setlength{\figureheight}{6cm}
+        \begin{columns}
+            \column{.5\textwidth}
+                \centering
+                tail cuts\\
+                \input{plots/CTA/tail_xi_vs_NTel.tex}
+            \column{.5\textwidth}
+                \centering
+                wavelets\\                
+                
+                \input{plots/CTA/wave_xi_vs_NTel.tex}
+        \end{columns}
+
+    \end{frame}
+
+    
+
+    \begin{frame}{Next Steps}
+        \begin{columns}
+            \column{.5\textwidth}
+
+                \begin{itemize}
+                    \item [] Photon / Proton Discrimination
+                    \item Protons pose major background
+                    \item Event rate about $10^5$ times above Photons
+                    \item[]
+                    \item[] H.E.S.S. methode:
+                    \item reducing total signal on camera, length and width
+                        of ellipsis and their variances from all telescopes
+                        into one parameter to cut on
+                    \item[]
+                    \item[] here instead:
+                    \item Discrimination with Random Forest Classifier\\
+                        fed with width, length, ... of Hillas ellipsis
+                        from each camera image
+                \end{itemize}
+            \column{.5\textwidth}
+                \centering
+                \begin{tikzpicture}
+                    \node[anchor=south] (pic1) at (0,0)       {\includegraphics[trim=22cm 0 4cm 2cm,clip,width=.6\textwidth]{pics/photon_1}};
+                    \node[anchor=north] (pic2) at (pic1.south){\includegraphics[trim=22cm 0 4cm 2cm,clip,width=.6\textwidth]{pics/proton_1}};
+                    \node[anchor=south,rotate=90] at (pic1.west) {photon};
+                    \node[anchor=south,rotate=90] at (pic2.west) {proton};
+                \end{tikzpicture}
+        \end{columns}
+    \end{frame}
+    
+    
+    \begin{frame}{Skymap of a point-source}
+        \begin{columns}
+            \column{.5\textwidth}
+                \centering
+                tail cuts\\
+                \includegraphics[trim=2.2cm 0 2.5cm 5mm,clip,width=.95\textwidth]{pics/CTA/skymap_tail.pdf}
+            \column{.5\textwidth}
+                \centering
+                wavelets\\                
+                \includegraphics[trim=2.2cm 0 2.5cm 5mm,clip,width=.95\textwidth]{pics/CTA/skymap_wave.pdf}
+        \end{columns}
+
+    \end{frame}
+
+    
+
+    \begin{frame}{Conclusion}{}
+        {\Large
+        \centering
+        \begin{itemize}
+            \item apply analysis chain to full array
+            \item investigate
+            \begin{itemize}
+            {\large
+                \item impact on overlapping sources
+                \item real-time analysis
+                \item $\rightarrow$ reduction of data flow
+            }
+            \end{itemize}
+            \item[]
+            \item for more information on wavelets:\\
+                see Jérémie's talk in February
+            \item will be here for another 1,5 years
+        \end{itemize}
+        }
+    \end{frame}
+
+    
+    \newcounter{finalframe}
+    \setcounter{finalframe}{\value{framenumber}}
+
+    
+%     \end{document}
+    
+    
+    
+    \begin{frame}
+        \centering
+        \Huge Backup\\
+    \end{frame}
+
+
+    \begin{frame}
+        \frametitle{Muon Track Reconstruction}
+        \begin{columns}
+            \column{.55\textwidth}
+                \begin{itemize}
+                    \item muon track reconstruction already well established
+                    \item muons can pass through detector
+                    \item Cherenkov radiation along track
+                    \item photons emitted at $\varphi_\mathrm{Ch}\approx\unit{42}{\degree}$
+                    \item clean signature 
+                    \item[]
+                    \item maximum likelihood fit based on hit time residuals
+                    \item median angular resolution $\approx\unit{0.4}{\degree}$ 
+                    \item[]
+                    \item limit us to $\nu_\mu \rightarrow \mu$ (and $\nu_\tau \rightarrow \tau \rightarrow\mu$) interactions
+
+                \end{itemize}
+            \column{.45\textwidth}
+                \begin{tikzpicture}
+                    \coordinate (vert) at (1.5,1.);
+                    \draw [line width=4mm,join=round,blue!0] (-0.5,-1.5)  rectangle (4,6);
+                    \draw [line width=4mm,join=round,blue!10,fill=blue!10] (-0.5,0)  rectangle (4,5);
+                    \draw[dashed,-stealth] (1,0) -- (vert) node[midway,right] {$\nu_\mu$};
+                    \fill[black] (vert) circle (1.5pt);
+                    \draw[-stealth] (vert) -- +(80:3.5) node [midway,left] {$\mu$} coordinate (muend);
+                    \draw[blue,snake it,-stealth] ($(vert) ! .1 ! (muend)$) -- +( 38:1.6) ;
+                    \draw[blue,snake it,-stealth] ($(vert) ! .4 ! (muend)$) -- +( 38:1.6) ;
+                    \draw[blue,snake it,-stealth] ($(vert) ! .8 ! (muend)$) -- +( 38:1.6) node [label=0:{$\gamma$}] {};
+                    \draw[blue,snake it,-stealth] ($(vert) ! .3 ! (muend)$) -- +(122:1.6) ;
+                    \draw[blue,snake it,-stealth] ($(vert) ! .7 ! (muend)$) -- +(122:1.6) ;
+                
+                \end{tikzpicture}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Shower Reconstruction}
+        \begin{columns}
+            \column{.55\textwidth}
+                \begin{itemize}
+                    \item shower events open window to \\
+                        {}\hspace{12pt}$\nu_e \rightarrow e$\\
+                        {}\hspace{12pt}$\nu_x \rightarrow \nu_x + hadr.$ \\
+                        {}\hspace{12pt}$\nu_\tau \rightarrow \tau \rightarrow e / hadr.$
+                    \item[]
+                    \item cascade of particles within few metres
+                    \item can be approximated as point source
+                    \item emits shell of light in all directions
+                    \item still, more light emitted under ``Cherenkov angle''
+                    \item[]
+                    \item[] in ice: 
+                    \item effect almost completely gone due to scattering
+                \end{itemize}
+            \column{.45\textwidth}
+
+                \begin{tikzpicture}
+                    \coordinate (vert) at (1.5,1.);
+                    \draw [line width=4mm,join=round,blue!0] (-0.5,-1.5)  rectangle (4,6);
+                \only<1>{
+                    \draw [line width=4mm,join=round,blue!10,fill=blue!10] (-0.5,0)  rectangle (4,5);
+                    \draw[dashed,-stealth] (1,0) -- (vert) node[midway,right] {$\nu_e$};
+                    \fill[black] (vert) circle (1.5pt);
+                    \draw (vert) -- +(70:.5);
+                    \draw (vert) -- +(89:.5);
+                    \draw ([shift=(78:.3)]vert) -- +(60:.5);
+                    \draw ([shift=(82:.3)]vert) -- +(100:.5);
+                    
+                    \draw ([shift=(80:.5)]vert) -- +(74:.5);           \draw ([shift=(85:.5)]vert) -- +(90:.5);
+                    \draw ([shift=(70:.6)]vert) -- +(70:.5);           \draw ([shift=(90:.6)]vert) -- +(91:.5);
+                    \draw ([shift=(70:.6)]vert) -- +(50:.5);           \draw ([shift=(90:.6)]vert) -- +(110:.5);
+                    \draw ([shift=(75:.9)]vert) -- +(75:.5);           \draw ([shift=(85:.9)]vert) -- +(85:.5);
+                    \draw ([shift=(75:1.1)]vert) -- +(70:.5);          \draw ([shift=(85:1.1)]vert) -- +(90:.5);
+                    \draw ([shift=(65:1.1)]vert) -- +(85:.5);          \draw ([shift=(95:1.1)]vert) -- +(75:.5);
+                    \draw ([shift=(78:1.1)]vert) -- +(50:.5);          \draw ([shift=(82:1.1)]vert) -- +(110:.5);
+                    \draw ([shift=(77:1.3)]vert) -- +(80:.5);          \draw ([shift=(83:1.3)]vert) -- +(80:.5);
+                    \draw ([shift=(75:1.5)]vert) -- +(70:.5);          \draw ([shift=(85:1.5)]vert) -- +(91:.5);
+                    \draw ([shift=(69:1.5)]vert) -- +(85:.5);          \draw ([shift=(91:1.5)]vert) -- +(75:.5);
+                    \draw ([shift=(65:1.5)]vert) -- +(65:.5);          \draw ([shift=(95:1.5)]vert) -- +(95:.5);
+                    \draw ([shift=(66:.9)]vert) -- +(65:.5);           \draw ([shift=(94:.9)]vert) -- +(95:.5);
+                    \draw ([shift=(71:1.15)]vert) -- +(65:.5);         \draw ([shift=(89:1.15)]vert) -- +(95:.5);
+                    \draw ([shift=(71:2.1)]vert) -- +(67:.5);          \draw ([shift=(89:2.1)]vert) -- +(93:.5);
+                    \draw ([shift=(68:1.7)]vert) -- +(70:.5);          \draw ([shift=(92:1.7)]vert) -- +(91:.5);
+                    \draw ([shift=(78:1.85)]vert) -- +(75:.5);         \draw ([shift=(82:1.85)]vert) -- +(85:.5);
+                    \draw ([shift=(74:2.05)]vert) -- +(70:.5);         \draw ([shift=(86:2.05)]vert) -- +(91:.5);
+                    \draw ([shift=(79:2.5)]vert) -- +(65:.5);          \draw ([shift=(81:2.5)]vert) -- +(95:.5);
+                    \draw ([shift=(80:2.2)]vert) -- +(80:.5);          \draw ([shift=(80:.9)]vert) -- +(80:.7);
+                    \draw ([shift=(82:2.5)]vert) -- +(79:.5);          \draw ([shift=(79:2.6)]vert) -- +(82:.5);
+                    \draw ([shift=(76:2.4)]vert) -- +(55:.5);          \draw ([shift=(84:2.4)]vert) -- +(105:.5);
+                    \draw ([shift=(69:1.5)]vert) -- +(60:.5);          \draw ([shift=(91:1.5)]vert) -- +(100:.5);
+                    \draw ([shift=(67:1.1)]vert) -- +(50:.5);          \draw ([shift=(93:1.1)]vert) -- +(110:.5);
+                    \draw[blue,snake it,-stealth] ([shift=(100:2.5)]vert) -- +(122:1.6) ;
+                    \draw[blue,snake it,-stealth] ([shift=(55:2.2)]vert) -- +(38:1.6) node [label=180:{$\gamma$}] {};
+                    \draw[blue,snake it,-stealth] ([shift=(45:1.5)]vert) -- +(-20:1.6) ;
+                    \draw[blue,snake it,-stealth] ([shift=(120:1.)]vert) -- +(200:1.6) ;
+                }
+                \only<2>{
+                    \node[anchor=north ] (cosphi) at (1.7,4.5) {
+                        \resizebox{\textwidth}{!}{
+                            \input{plots/ANTARES/expNPhot_cosPhi.tex}
+                        }
+                    }; 
+                    \node[anchor=north east,scale=.8] (text1) at ([xshift=-.4cm]cosphi.south east){
+                        expected number of Photons from a \unit{1}{\tera\electronvolt}
+                    };
+                    \node[anchor=north east,scale=.8] (text2) at ([yshift=.1cm]text1.south east){
+                        shower on a PMT in \unit{100}{\metre} distance
+                    };
+                    
+                }
+                \end{tikzpicture}
+        \end{columns}
+    \end{frame}
+
+    
+    \begin{frame}
+        \frametitle{Shower Reconstruction -- Performance: Direction \& Energy}
+        {\centering
+            \resizebox{.9\textwidth}{!}{%
+                \input{plots/ANTARES/median_xi.tex}%
+                \input{plots/ANTARES/median_relShE_corrected.tex}%
+            }\\
+        }\bigskip
+        
+        \begin{itemize}
+            \item position of shower position reconstructed with accuracy of about \unit{1}{\metre}
+            \item median angular error $\xi\approx\unit{2}{\degree}$ in relevant energy range
+            \item[] (compared to \unit{15}{\degree} for IceCube)
+            \item energy resolution of $5\,\%-10\,\%$
+        \end{itemize}
+            
+    \end{frame}
+
+    
+
+    \begin{frame}
+        \begin{columns}
+            \column{.45\textwidth}
+                \only<1>{
+                    \Put(0,0){
+                    \includegraphics[width = \textwidth]{pics/NikhefRedBox}
+                    }
+                }
+                \only<2>{
+                    \Put(0,0){
+                        \includegraphics[width = \textwidth]{pics/PPMDOMatMarseille}
+                    }
+                }
+                \only<3>{
+                    \includegraphics[width = \textwidth]{pics/PPM-DOM-Deployment}
+                }        \column{.55\textwidth}
+                \begin{itemize}
+                    \item \unit{17}{\arcsecond}glass sphere
+                    \item 31 \unit{3}{\arcsecond} PMTs, 5 rings with 6 PMTs + 1
+                    \item[]
+                    \item 1 DOM equivalent to 3 ANTARES OMs (cheaper)
+                    \item but only one penetrator per floor (less risky)
+                    \item low power consumption (\unit{<10}{W} per DOM)
+                    \item[]
+                    \item covers almost whole solid angle
+                    \item directional information
+                    \item background reduction from PC segmentation
+                    \item[]
+                    \item prototype deployed on Instrumentation Line within ANTARES
+                \end{itemize}
+        \end{columns}
+    \end{frame}
+    
+    
+    \begin{frame} {Rate of different Coincidence Levels}
+        \begin {columns}
+            \column {.6\textwidth}
+                \scalebox {.4} {
+                    \input{plots/PPMDOM/CoinceRate.tex}
+                }
+            \column {.4\textwidth}
+                \begin{itemize}
+                    \item Coincidence Level:\\
+                        \# of Hits within \unit{20}{\nano\second}
+                    \item Combinatorial Background:\\
+                        estimate for coincidences caused by multiple single hits
+                    \item derived from average PMT rate in data
+                    \item[$\rightarrow$] {European Physical Journal C} (2014) 74:3056
+                \end{itemize}
+        \end {columns}
+    \end{frame}
+
+
+    \begin{frame}
+        \frametitle{Hit Count according to PMT Zenith}
+        \begin{tikzpicture}
+            \node[anchor = west] (plot) at (current page.west) {
+                \scalebox{.4} {
+                    \input{plots/PPMDOM/HitsVsZenith.tex}
+                }
+            };
+            \only<2->{
+                \draw[solid,red,line width=1pt] (4.27,4.4) circle (8pt);
+                \draw[solid,red,line width=1pt] (5.75,5.3) circle (9pt);
+                \draw[solid,red,line width=1pt] (6.8,5.4) circle (9pt);
+            }
+            \node[anchor = east, xshift = -.8cm] (rest) at (current page.east) {
+                \begin{minipage}{4cm}
+                    \begin{itemize}
+                        \item Coincidence Level $ > 7$
+                        \item clear asymmetry towards upwards looking PMTs
+                        \item 
+                            \only<1>{drops due to LCM shadowing}
+                            \only<2->{{\color{red}drops due to LCM shadowing}}
+                        \item we can ``see'' the LCM
+                        \item $\rightarrow$\ directional information from single storey
+                    \end{itemize}
+                \end{minipage}
+            };
+            \only<3>{
+                \node[anchor = north west] (LCM) at (plot.north west) {
+                    \includegraphics[width = .35\textwidth]{pics/PPM-DOM-Deployment}
+                };
+            }
+        \end{tikzpicture}
+    \end{frame}
+
+
+\setcounter{framenumber}{\value{finalframe}}    
+
+\end{document}
+
